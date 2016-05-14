@@ -13,7 +13,13 @@ package PF.Visual
 		private var c_GridHeight:int;
 		private var c_GridWidth:int;
 		
-		public function Grid(data2dimensional:Vector.<Vector.<int>> = null, data:Vector.<int> = null, gridWidth:int = -1, gridHeight:int = -1) 
+		public var c_HasGrid:Boolean = false;
+		
+		public function Grid() {
+			
+		}
+		
+		public function BuildGrid(data2dimensional:Vector.<Vector.<int>> = null, data:Vector.<int> = null, gridWidth:int = -1, gridHeight:int = -1):void 
 		{
 			c_GridHeight = gridHeight;
 			c_GridWidth = gridWidth;
@@ -65,8 +71,16 @@ package PF.Visual
 				
 				c_GridSquares.push(sq);
 			}
+			
+			c_HasGrid = true;
 		}
 		
+		public function RemoveGrid():void
+		{
+			while(numChildren > 0) {
+				removeChildAt(0);
+			}
+		}
 	}
 
 }
