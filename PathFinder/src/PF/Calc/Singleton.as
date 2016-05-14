@@ -6,6 +6,8 @@ package PF.Calc
 	 */
 	public class Singleton 
 	{
+		static public const c_WindowHeight:int = 300;
+		static public const c_WindowWidth:int = 500;
 		
 		public function Singleton() 
 		{

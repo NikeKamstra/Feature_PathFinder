@@ -3,6 +3,7 @@ package PF
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import PF.Visual.Grid;
+	import PF.Visual.Menu;
 	
 	/**
 	 * ...
@@ -20,7 +21,10 @@ package PF
 		private function init(e:Event = null):void 
 		{
 			removeEventListener(Event.ADDED_TO_STAGE, init);
-			var grid:Grid = new Grid(null, new < Vector.<int> > [new <int>[5,6,7], new <int>[1,2,3]]);
+			var menu:Menu = new Menu();
+			addChild(menu);
+			var grid:Grid = new Grid(new < Vector.<int> > [new <int>[0,1,0], new <int>[1,0,1], new <int>[0,1,0], new <int>[1,0,1]]);
+			addChild(grid);
 		}
 	}
 	
